@@ -1,0 +1,14 @@
+CLAUDE.md
+AGENTS.md
+.claude/
+
+# Material interno de estudio, no se entrega
+manual.tex
+manual.pdf
+
+# Archivos auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
