@@ -1,5 +1,3 @@
-% =====================================================================
-% Derivadas simbolicas en Prolog
 %
 % derivada(+Expresion, +Variable, -Resultado)
 % Devuelve la derivada indicada, SIN simplificar, tal como pide la
@@ -13,7 +11,6 @@
 %   http://www.nivaria.net/blog/index.php/prolog/383-derivada-de-una-funcion-entera
 %   https://gist.github.com/tokkenno/8038482
 %   http://turing.iimas.unam.mx/~pedroG/al-2008-II/Lab_05.pdf
-% =====================================================================
 
 
 % ------------------------------------------------ derivada de la variable
@@ -96,10 +93,8 @@ derivada(exp(U), X, exp(U)*DU) :- !, derivada(U, X, DU).
 derivada(ln(U), X, DU/U) :- !, derivada(U, X, DU).
 
 
-% =====================================================================
 % Pruebas
 % Escribir  pruebas.  en la consola para correrlas todas.
-% =====================================================================
 
 % ------------------------------------------------ casos esperados
 % caso(Expresion, Variable, ResultadoEsperado)
@@ -111,7 +106,6 @@ caso(ln(sen((x+1)/x)),   x, cos((x+1)/x)*(((1+0)*x-(x+1)*1)/x^2)/sen((x+1)/x)).
 caso((x^5+x^3)/(x^2+1),  x, ((5*x^4+3*x^2)*(x^2+1)-(x^5+x^3)*(2*x^1+0))/(x^2+1)^2).
 caso(arctan((x^2+1)^10), x, 10*(x^2+1)^9*(2*x^1+0)/(1+((x^2+1)^10)^2)).
 
-% Casos propios para las funciones que el enunciado no ejemplifica
 caso(cos(x^2),           x, -sen(x^2)*(2*x^1)).
 caso(tan(x),             x, (1+tan(x)^2)*1).
 caso(x^3-x,              x, 3*x^2-1).
@@ -120,7 +114,6 @@ caso(exp(x)/x,           x, (exp(x)*1*x-exp(x)*1)/x^2).
 
 
 % ------------------------------------------------ corredor de pruebas
-% Corre cada caso, compara contra lo esperado e imprime el resultado.
 pruebas :-
     forall(caso(E, V, Esperado), probar(E, V, Esperado)),
     nl,

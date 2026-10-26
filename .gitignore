@@ -2,6 +2,9 @@ CLAUDE.md
 AGENTS.md
 .claude/
 
+# Fuentes LaTeX: del informe solo se entrega el PDF
+informe.tex
+
 # Material interno de estudio, no se entrega
 manual.tex
 manual.pdf
